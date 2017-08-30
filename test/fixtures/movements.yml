@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  movement_type: 1
+  amount: MyText
+  articles: one
+
+two:
+  movement_type: 1
+  amount: MyText
+  articles: two
