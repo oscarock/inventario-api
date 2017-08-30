@@ -7,6 +7,10 @@ module Api
 		  def index
 		    render json: { articles: 'index articulos'}
 		  end
+
+		  def create
+		  	
+		  end
 		end
 	end
 end

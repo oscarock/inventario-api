@@ -1,4 +1,10 @@
 class User < ApplicationRecord
+	#validations
+	validates :name, presence: true
+	validates :email, presence: true, uniqueness: true
+	validates :password, presence: true
+	validates :profile, presence: true
+
 	has_secure_password
 	has_secure_token
 	 
