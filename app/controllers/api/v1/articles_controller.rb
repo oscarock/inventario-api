@@ -27,6 +27,22 @@ module Api
 			  end
 		  end
 
+		  def update
+		  	article = Article.find(params[:id])
+        if article.update(article_params)
+          render json:{
+            status: 200
+          }
+      	else
+          render json:{
+            status: 422,
+            errors: product.errors.full_messages
+          }
+        end
+		  end
+
+		  
+
 		  private
         def article_params
           params.require(:article).permit(:code, :description).merge(user_id: current_user.id)
