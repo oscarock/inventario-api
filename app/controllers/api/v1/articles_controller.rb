@@ -41,7 +41,13 @@ module Api
         end
 		  end
 
-		  
+		  def destroy
+		  	article = Article.find(params[:id])
+        article.destroy
+        render json:{
+            status: 204
+        }
+		  end
 
 		  private
         def article_params
