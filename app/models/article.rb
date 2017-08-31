@@ -3,5 +3,7 @@ class Article < ApplicationRecord
 	validates :code, presence: true, uniqueness: true
 	validates :description, presence: true
 
-  belongs_to :user
+	#relations
+	belongs_to :user
+	has_many :movements
 end

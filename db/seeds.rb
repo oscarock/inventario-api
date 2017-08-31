@@ -12,3 +12,7 @@ User.create(name: 'prueba2', email: 'prueba2@prueba2.com', password: '123456', p
 Profile.destroy_all
 Profile.create(description: 'perfil de administrador', name: 'Administrador')
 Profile.create(description: 'perfil de usuario', name: 'Usuario')
+
+MovementType.destroy_all
+MovementType.create(name: 'Entrada')
+MovementType.create(name: 'Salida')

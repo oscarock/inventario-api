@@ -1,8 +1,10 @@
 class Movement < ApplicationRecord
 	#validations
-	validates :movement_type, presence: true
+	validates :movement_type_id, presence: true
 	validates :amount, presence: true
-	validates :articles_id, presence: true
+	validates :article_id, presence: true
 
-  belongs_to :articles
+	#relations
+  	belongs_to :articles, optional: true
+  	belongs_to :movement_type, optional: true
 end

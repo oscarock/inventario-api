@@ -5,6 +5,10 @@ class User < ApplicationRecord
 	validates :password, presence: true
 	validates :profile_id, presence: true
 
+	#ralations
+	belongs_to :profile
+	has_many :articles
+
 	has_secure_password
 	has_secure_token
 	 
