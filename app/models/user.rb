@@ -3,7 +3,7 @@ class User < ApplicationRecord
 	validates :name, presence: true
 	validates :email, presence: true, uniqueness: true
 	validates :password, presence: true
-	validates :profile, presence: true
+	validates :profile_id, presence: true
 
 	has_secure_password
 	has_secure_token
