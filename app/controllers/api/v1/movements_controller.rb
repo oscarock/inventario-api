@@ -4,7 +4,15 @@ module Api
 			skip_before_action  :verify_authenticity_token
 		  before_action :require_login
 
-		  def create
+		  def index
+  	  	#movements = Movement.join(:article)where(user_id: current_user.id)
+  	    #render json: { 
+  	    	#articles: articles,
+  	    	#status: 200
+  			#}	
+		  end
+
+			def create
 		  	movements = Movement.new(movement_params)
 
 			  if movements.save
