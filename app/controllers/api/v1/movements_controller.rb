@@ -20,6 +20,20 @@ module Api
         end 
 		  end
 
+		  def update
+		  	movement = Movement.find(params[:id])
+        if movement.update(movement_params)
+          render json:{
+            status: 200
+          }
+      	else
+          render json:{
+            status: 422,
+            errors: movement.errors.full_messages
+          }
+        end		  	
+		  end
+
 		  private
         def movement_params
           params.require(:movement).permit(:movement_type_id, :article_id, :amount)
