@@ -34,6 +34,14 @@ module Api
         end		  	
 		  end
 
+		  def destroy
+		  	movement = Movement.find(params[:id])
+        movement.destroy
+        render json:{
+          status: 204
+        }
+		  end
+
 		  private
         def movement_params
           params.require(:movement).permit(:movement_type_id, :article_id, :amount)
