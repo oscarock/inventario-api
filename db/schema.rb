@@ -31,10 +31,12 @@ ActiveRecord::Schema.define(version: 20170831203216) do
     t.integer "movement_type_id"
     t.integer "article_id"
     t.integer "amount"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_movements_on_article_id"
     t.index ["movement_type_id"], name: "index_movements_on_movement_type_id"
+    t.index ["user_id"], name: "index_movements_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
