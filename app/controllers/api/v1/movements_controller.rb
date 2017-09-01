@@ -43,11 +43,17 @@ module Api
 		  end
 
 		  def destroy
-		  	movement = Movement.find(params[:id])
-        movement.destroy
-        render json:{
-          status: 204
-        }
+		  	if current_user.profile_id == 1
+		  		movement = Movement.find(params[:id])
+        	movement.destroy
+        	render json:{
+          	status: 204
+        	}
+        else
+        	render json:{
+            status: 403
+        	}	
+		  	end
 		  end
 
 		  private
