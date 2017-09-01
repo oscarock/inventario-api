@@ -23,6 +23,6 @@ Article.create(code: 1213, description: 'camisa', user_id: 1)
 Article.create(code: 1214, description: 'esferos', user_id: 2)
 
 Movement.destroy_all
-Movement.create(movement_type_id: 3, article_id: 1, amount: 30)
-Movement.create(movement_type_id: 4, article_id: 1, amount: 10)
-Movement.create(movement_type_id: 3, article_id: 2, amount: 15)
+Movement.create(movement_type_id: 3, article_id: 1, amount: 30, user_id: 1)
+Movement.create(movement_type_id: 4, article_id: 1, amount: 10, user_id: 1)
+Movement.create(movement_type_id: 3, article_id: 2, amount: 15, user_id: 2)
