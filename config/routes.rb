@@ -3,11 +3,9 @@ Rails.application.routes.draw do
     namespace :v1 do
     	resources :articles
       resources :movements
-      # get 'articles/index'	
-      # scope :format => true, :constraints => { :format => 'json' } do
-        post   "/login"       => "sessions#create"
-        delete "/logout"      => "sessions#destroy"
-      # end
+      get "total_articles/:id" => "movements#total_articles"
+      post   "/login"  => "sessions#create"
+      delete "/logout" => "sessions#destroy"
     end  
   end
 end
