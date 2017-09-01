@@ -65,6 +65,7 @@ module Api
 end
 
 
- # HTTParty.post('http://localhost:3000/api/v1/movements', body: { movement_type: 1, amount: 30, article_id: 1}.to_json, headers: {"Authorization" => "Token token=\"nmw92JSxui4ouHXugZHigZ2a\"", 'Content-Type' => 'application/json' })
+ # HTTParty.post('http://localhost:3000/api/v1/movements', body: { movement_type: 1, article_id: 1, amount: 30}.to_json, headers: {"Authorization" => "Token token=\"MScmHbfmHECwVY9VBSg5nRoi\"", 'Content-Type' => 'application/json' })
  # HTTParty.post('http://localhost:3000/api/v1/movements', body: { movement_type: 1213}.to_json, headers: {"Authorization" => "Token token=\"nmw92JSxui4ouHXugZHigZ2a\"", 'Content-Type' => 'application/json' })
  # HTTParty.post('http://localhost:3000/api/v1/articles', body: { code: 1213, description: "camisas"}.to_json, headers: {"Authorization" => "Token token=\"nBKoZhg2QZXpmra8dxeepDM2\"", 'Content-Type' => 'application/json' })
+ # HTTParty.post('http://localhost:3000/api/v1/articles', body: { code: 1213, description: "camisas"}.to_json, headers: {"Authorization" => "Token token=\"MScmHbfmHECwVY9VBSg5nRoi\"", 'Content-Type' => 'application/json' })
