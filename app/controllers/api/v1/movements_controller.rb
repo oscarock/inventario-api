@@ -5,11 +5,11 @@ module Api
 		  before_action :require_login
 
 		  def index
-  	  	#movements = Movement.join(:article)where(user_id: current_user.id)
-  	    #render json: { 
-  	    	#articles: articles,
-  	    	#status: 200
-  			#}	
+  	  	movements = Movement.where(user_id: current_user.id)
+		    render json: { 
+		    	movements: movements,
+		    	status: 200
+				}
 		  end
 
 			def create
@@ -69,3 +69,4 @@ end
  # HTTParty.post('http://localhost:3000/api/v1/movements', body: { movement_type: 1213}.to_json, headers: {"Authorization" => "Token token=\"nmw92JSxui4ouHXugZHigZ2a\"", 'Content-Type' => 'application/json' })
  # HTTParty.post('http://localhost:3000/api/v1/articles', body: { code: 1213, description: "camisas"}.to_json, headers: {"Authorization" => "Token token=\"nBKoZhg2QZXpmra8dxeepDM2\"", 'Content-Type' => 'application/json' })
  # HTTParty.post('http://localhost:3000/api/v1/articles', body: { code: 1213, description: "camisas"}.to_json, headers: {"Authorization" => "Token token=\"MScmHbfmHECwVY9VBSg5nRoi\"", 'Content-Type' => 'application/json' })
+ 
