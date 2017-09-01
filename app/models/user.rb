@@ -8,6 +8,7 @@ class User < ApplicationRecord
 	#ralations
 	belongs_to :profile
 	has_many :articles
+	has_many :movements
 
 	has_secure_password
 	has_secure_token
