@@ -42,11 +42,18 @@ module Api
 		  end
 
 		  def destroy
-		  	article = Article.find(params[:id])
-        article.destroy
-        render json:{
+		  	if current_user.profile_id == 1
+		  		article = Article.find(params[:id])
+		  		article.destroy
+        	render json:{
             status: 204
-        }
+        	}
+        else
+        	render json:{
+            status: 403
+        	}	
+		  	end
+        
 		  end
 
 		  private
