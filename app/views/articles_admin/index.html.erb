@@ -16,6 +16,7 @@
 	<% @articles_admin.each do |article| %>
 		<tr>
 			<td class="text-center"><%= article.id %></td>
+			<td class="text-center"><img src="<%= article.image_url %>" width="100"></td>
 			<td class="text-center"><%= article.code %></td>
 			<td class="text-center"><%= article.description %></td>
 			<td class="text-center"><%= article.user_id %></td>
