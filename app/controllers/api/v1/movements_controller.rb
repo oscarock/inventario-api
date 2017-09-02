@@ -17,11 +17,13 @@ module Api
 
 			  if movements.save
 			    render json: {
+            message: "Movimiento Guardado Correctamente.", 
             status: 201,
             movements: movements
           }
 			  else
 			    render json: {
+            message: "Errores de Validacion.", 
             status: 422,
             errors: movements.errors.full_messages
           }
@@ -32,10 +34,12 @@ module Api
 		  	movement = Movement.find(params[:id])
         if movement.update(movement_params)
           render json:{
+            message: "Movimiento Editado Correctamente.", 
             status: 200
           }
       	else
           render json:{
+            message: "Errores de Validacion.",
             status: 422,
             errors: movement.errors.full_messages
           }
@@ -47,10 +51,12 @@ module Api
 		  		movement = Movement.find(params[:id])
         	movement.destroy
         	render json:{
+            message: "Movimiento Eliminado Correctamente.", 
           	status: 204
         	}
         else
         	render json:{
+            message: "No tienes Permiso para esta Accion.", 
             status: 403
         	}	
 		  	end
@@ -58,7 +64,7 @@ module Api
 
 		  private
         def movement_params
-          params.require(:movement).permit(:movement_type_id, :article_id, :amount)
+          params.require(:movement).permit(:movement_type_id, :article_id, :amount).merge(user_id: current_user.id)
         end
 		end
 	end
