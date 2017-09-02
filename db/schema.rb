@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 20170831203216) do
 
   create_table "articles", force: :cascade do |t|
+    t.string "image_url"
     t.integer "code"
     t.text "description"
     t.integer "user_id"
