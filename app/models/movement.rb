@@ -8,7 +8,7 @@ class Movement < ApplicationRecord
 	#relations
   	belongs_to :movement_type, optional: true
   	belongs_to :article, optional: true
-  	belongs_to :user
+  	belongs_to :user, optional: true
 
   	def self.type_total(type, article)
     	where(movement_type_id: type, article_id: article).sum(:amount)
