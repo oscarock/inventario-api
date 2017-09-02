@@ -1,0 +1,30 @@
+<div class="container">
+  <% if @errors %>
+  		<br>
+  		<div class="alert alert-danger">
+	      <% @errors.each do |error| %>
+	      <li class="text-center"><%= error %></li>
+	      <% end %>
+      </div>
+  <% end %>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h2 class="text-center">Registrar Usuario</h2>
+      <br>
+      <%= form_for @user do |f| %>
+        <div class="form-group">
+          <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre" %><br>
+        </div>
+         <div class="form-group">
+          <%= f.text_field :email, class: "form-control input-lg", placeholder: "Email" %><br>
+        </div>
+         <div class="form-group">
+          <%= f.password_field :password, class: "form-control input-lg", placeholder: "Password temporal" %><br>
+        </div>
+        <%= f.submit "Enviar", class: "btn btn-success btn-lg btn-block" %>
+      <% end %>
+      <br>
+      <%= link_to "Volver a Usuarios", users_path()%>
+    </div>
+  </div>
+</div>
