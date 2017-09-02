@@ -8,4 +8,8 @@ Rails.application.routes.draw do
 		  delete "/logout" => "sessions#destroy"
 		end  
   end
+
+  namespace :admin do
+  	resource :users
+  end
 end
