@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 		end  
   end
 
-  #namespace :admin do
-  	resources :users
-  #end
+	resources :users
+	resources :articles_admin
 end

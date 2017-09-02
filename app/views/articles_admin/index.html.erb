@@ -1,0 +1,26 @@
+<div class="container">
+	<br>
+	<br>
+	<h1>Articulos Registrados en la API</h1>
+	<br>
+	<br>
+	<table class="table table-hover"> 
+	<tr>
+		<th class="text-center">ID</th>
+		<th class="text-center">Imagen URL</th>
+		<th class="text-center">Codigo Del Producto</th>
+		<th class="text-center">Descripcion</th>
+		<th class="text-center">Usuario</th>
+		<th class="text-center">Fecha Creado</th>
+	</tr>
+	<% @articles_admin.each do |article| %>
+		<tr>
+			<td class="text-center"><%= article.id %></td>
+			<td class="text-center"><%= article.code %></td>
+			<td class="text-center"><%= article.description %></td>
+			<td class="text-center"><%= article.user_id %></td>
+			<td class="text-center"><%= article.created_at %></td>
+		</tr>
+	<% end %>
+</table>
+</div>
