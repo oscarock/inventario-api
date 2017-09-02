@@ -9,12 +9,23 @@
   </head>
 
   <body>
-  	<% if notice %>
-      <p class="text-center alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="text-center alert alert-danger"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Administracion API</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="<%= users_path() %>">Usuarios Registrados</a></li>
+            <li><a href="<%= users_path() %>">Articulos Registrados</a></li>
+          </ul>
+        </div>
+      </nav>
+      <% if notice %>
+        <p class="text-center alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="text-center alert alert-danger"><%= alert %></p>
+      <% end %>
+      <%= yield %>
   </body>
 </html>
