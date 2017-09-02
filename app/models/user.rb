@@ -6,7 +6,7 @@ class User < ApplicationRecord
 	validates :profile_id, presence: true
 
 	#ralations
-	belongs_to :profile
+	belongs_to :profile, optional: true
 	has_many :articles
 	has_many :movements
 

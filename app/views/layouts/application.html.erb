@@ -9,6 +9,12 @@
   </head>
 
   <body>
+  	<% if notice %>
+      <p class="text-center alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="text-center alert alert-danger"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
