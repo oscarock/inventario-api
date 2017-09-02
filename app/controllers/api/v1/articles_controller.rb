@@ -5,7 +5,7 @@ module Api
 		  
 		  def index
 		  	articles = Article.where(user_id: current_user.id)
-		    render json: { 
+		    render json: {
 		    	articles: articles,
 		    	status: 200
 				}
@@ -16,11 +16,13 @@ module Api
 
 			  if articles.save
 			    render json: {
+			    	message: "Articulo Guardado Correctamente.", 
             status: 201,
             articles: articles
           }
 			  else
 			    render json: {
+			    	message: "Errores de Validacion.", 
             status: 422,
             errors: articles.errors.full_messages
           }
@@ -31,10 +33,12 @@ module Api
 		  	article = Article.find(params[:id])
         if article.update(article_params)
           render json:{
+          	message: "Articulo Editado Correctamente.", 
             status: 200
           }
       	else
           render json:{
+          	message: "Errores de Validacion.", 
             status: 422,
             errors: product.errors.full_messages
           }
@@ -46,19 +50,44 @@ module Api
 		  		article = Article.find(params[:id])
 		  		article.destroy
         	render json:{
+        		message: "Articulo Eliminado Correctamente.", 
             status: 204
         	}
         else
         	render json:{
+        		message: "No tienes Permiso para esta Accion.", 
             status: 403
         	}	
 		  	end
-        
+      end
+
+      def total_articles
+		  	if Article.exists?(id: params[:id])
+		  		article_total = Article.find(params[:id])
+		  		if article_total.user_id == current_user.id 
+		  			total = Movement.total(params[:id])
+  		  		render json:{
+  		  			message: "Numero de unidades del Articulo",
+  		  			total_articles: total,	
+  		  			status: 200
+  					}
+  				else
+  					render json:{
+  						message: "Este Articulo no te pertenece",
+  		  			status: 403
+  					}	
+		  		end
+  		  else
+  				render json:{
+  					message: "el id del Articulo no existe",
+  		  		status: 404
+  				}	
+		  	end
 		  end
 
 		  private
         def article_params
-          params.require(:article).permit(:code, :description).merge(user_id: current_user.id)
+          params.require(:article).permit(:image_url, :code, :description).merge(user_id: current_user.id)
         end
 		end
 	end
