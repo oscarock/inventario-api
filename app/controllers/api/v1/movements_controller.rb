@@ -67,7 +67,7 @@ module Api
   					}
   				else
   					render json:{
-  						message: "Este Id no pertenece a tus articulos",
+  						message: "Este Articulo no te pertenece",
   		  			status: 403
   					}	
 		  		end
