@@ -30,6 +30,14 @@ module Api
         end 
 		  end
 
+      def show
+        movement = Movement.find(params[:id])
+        render json:{
+          movement: movement,
+          status: 200
+        }
+      end
+
 		  def update
 		  	movement = Movement.find(params[:id])
         if movement.update(movement_params)
