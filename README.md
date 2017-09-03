@@ -1,24 +1,51 @@
-# README
+# URL's de la API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Articulos:
 
-Things you may want to cover:
+### mostrar todos los articulos  
+**/articles** 
+HTTParty.get("#{base_uri}/articles", headers: {'Content-Type' => 'application/json',"Authorization" => "Token token=\"#{token_user}\""})
 
-* Ruby version
+### guardar articulos
+**/articles**
+HTTParty.post("#{base_uri}/articles", body: { campos a guardar }.to_json, headers: {"Authorization" => "Token token=\"#{token_user}\"", 'Content-Type' => 'application/json' })
 
-* System dependencies
+### show articulo
+**/articles/:id**
+HTTParty.get("#{base_uri}/articles/:id}", headers: {"Authorization" => "Token token=\"#{token_user}\""})
 
-* Configuration
+### editar articulo
+**/article/:id**
+HTTParty.patch("#{base_uri}/articles/:id}", body: { campos a guardar }.to_json, headers: {"Authorization" => "Token token=\"#{token_user}\"", 'Content-Type' => 'application/json' })
 
-* Database creation
+### eliminar articulo
+**/article/:id**
+HTTParty.delete("#{base_uri}/articles/:id}", headers: {"Authorization" => "Token token=\"#{token_user}\""})
 
-* Database initialization
+### caculo total de articulos
+**/total_articles/:id_article**
+HTTParty.get("#{base_uri}/total_articles/:id_article", headers: {"Authorization" => "Token token=\"#{token_user}\""})
 
-* How to run the test suite
+-------------------------------------------------------------------------------------------------------------------------
 
-* Services (job queues, cache servers, search engines, etc.)
+## Movimientos:
 
-* Deployment instructions
+### mostrar todos los movimientos
+**/movements**
+HTTParty.get("#{base_uri}/movements", headers: {'Content-Type' => 'application/json',"Authorization" => "Token token=\"#{token_user}\""})
 
-* ...
+### guardar movimientos
+**/movements**
+HTTParty.post("#{base_uri}/movements", body: { campos a guadar }.to_json, headers: {"Authorization" => "Token token=\"#{token_user}\"", 'Content-Type' => 'application/json' })
+
+### show movimiento
+**/movements/:id**
+HTTParty.get("#{base_uri}/movements/:id}", headers: {"Authorization" => "Token token=\"#{token_user}\""})
+
+### editar movimiento
+**/movements/:id**
+HTTParty.patch("#{base_uri}/movements/#{params[:id]}", body: { campos a guardar }.to_json, headers: {"Authorization" => "Token token=\"#{token_user}\"", 'Content-Type' => 'application/json' })
+
+### eliminar movimiento
+**/movements/:id**
+HTTParty.delete("#{base_uri}/movements/:id}", headers: {"Authorization" => "Token token=\"#{token_user}\""})
