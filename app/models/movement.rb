@@ -15,6 +15,6 @@ class Movement < ApplicationRecord
   	end
 
   	def self.total(article)
-    	type_total(1, article) - type_total(2, article)
+    	type_total(3, article) - type_total(4, article)
   	end
 end
