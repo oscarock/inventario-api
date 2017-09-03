@@ -4,9 +4,9 @@ module Api
 		  before_action :require_login
 		  
 		  def index
-		  	articles = Article.where(user_id: current_user.id)
+		  	@articles = Article.where(user_id: current_user.id)
 		    render json: {
-		    	articles: articles,
+		    	articles: @articles,
 		    	status: 200
 				}
 		  end
@@ -28,6 +28,14 @@ module Api
           }
 			  end
 		  end
+
+      def show
+        article = Article.find(params[:id])
+        render json:{
+          article: article,
+          status: 200
+        }
+      end
 
 		  def update
 		  	article = Article.find(params[:id])
