@@ -1,7 +1,7 @@
 # URL's de la API
 
 ## Usuarios Solicitar Token:
-HTTParty.post('http://localhost:3000/login.json', body: { email: "prueba2@prueba2.com", password:"123456"}.to_json, headers: { 'Content-Type' => 'application/json' })
+HTTParty.post('#{base_uri}/login.json', body: { email: "prueba2@prueba2.com", password:"123456"}.to_json, headers: { 'Content-Type' => 'application/json' })
 
 ## Articulos:
 
